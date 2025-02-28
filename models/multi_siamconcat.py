@@ -19,13 +19,16 @@ from .helper import build_encoder
 
 
 class MultiSiamConcat(nn.Module):
-    def __init__(self, encoder, dim):
+    def __init__(self, encoder, dim, config):
         super().__init__()
         self.encoder = encoder
 
         self.non_linear = nn.ReLU()
 
-        self.classifier = nn.Linear(5*dim, 1)
+        self.T = config['timesteps']
+
+        # self.classifier = nn.Linear(5*dim, 1)
+        self.classifier = nn.Linear(self.T*dim, 1)
 
 
     def forward(self, sample):
@@ -45,8 +48,17 @@ class MultiSiamConcat(nn.Module):
             }
         """
         embedding_dict = {}
+
+        # output timestep list according to the number of timesteps T
+        # T = 5 -> ['t1', 't2', 't3', 't4', 't5']
+        # T = 4 -> ['t2', 't3', 't4', 't5']
+        # T = 3 -> ['t3', 't4', 't5']
+        # T = 2 -> ['t4', 't5']
+        all_timesteps = ['t1', 't2', 't3', 't4', 't5']
+        timesteps = all_timesteps[-self.T:]
         
-        for key in ['t1', 't2', 't3', 't4', 't5']:
+        # for key in ['t1', 't2', 't3', 't4', 't5']:
+        for key in timesteps:
             x = sample[key]
 
             # Encoder
@@ -54,7 +66,8 @@ class MultiSiamConcat(nn.Module):
             embedding_dict[key] = embedding
 
             # Concatenate the embeddings
-            if key == 't1':
+            # if key == 't1':
+            if key == timesteps[0]:  
                 concat = torch.flatten(embedding, start_dim=1)
             else:
                 concat = torch.cat((concat, torch.flatten(embedding, start_dim=1)), dim=1)
@@ -92,7 +105,7 @@ def build_model(config):
 
     encoder_dim = config['encoder']['embed_dim']*(config['datasets']['img_size'][0]//config['encoder']['patch_size'])*(config['datasets']['img_size'][1]//config['encoder']['patch_size'])
 
-    model = MultiSiamConcat(encoder, dim=encoder_dim)
+    model = MultiSiamConcat(encoder, dim=encoder_dim, config=config)
 
     criterion = SetCriterion(config['losses']['types'])
 
