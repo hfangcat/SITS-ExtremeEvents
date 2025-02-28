@@ -1,0 +1,11 @@
+baseline: vanilla_vae
+latent_dim: 256
+losses:
+  types: ['loss_recon_output', 'loss_kl_divergence', 'loss_z']
+  temperature: 1.0
+  weight_recon_output: 1.0
+  weight_kl_divergence: 0.00025
+  weight_z: 1.0
+  weight_z_contrastive: 0.5
+  weight_z_consistency: 0.5
+exp_name: 'vae_contrastive'
