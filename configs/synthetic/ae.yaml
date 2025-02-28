@@ -1,0 +1,9 @@
+baseline: vanilla_ae
+losses:
+  types: ['loss_recon_output', 'loss_embedding']
+  temperature: 1.0
+  weight_recon_output: 1.0
+  weight_embedding: 1.0
+  weight_embedding_contrastive: 0.5
+  weight_embedding_consistency: 0.5
+exp_name: 'ae_contrastive'
