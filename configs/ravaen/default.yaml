@@ -1,0 +1,46 @@
+datasets:
+  train_path: 'data/processed/ravaen_hdf5/train_patches.hdf5'
+  val_path: 'data/processed/ravaen_hdf5/val_patches.hdf5'
+  test_path: 'data/processed/ravaen_hdf5/test_patches.hdf5'
+  train_csv: 'data/processed/ravaen_hdf5/train.csv'
+  val_csv: 'data/processed/ravaen_hdf5/val.csv'
+  test_csv: 'data/processed/ravaen_hdf5/test.csv'
+  norm:
+    mean: [834.3116  1000.4049  1154.5111]
+    std: [703.7989  636.1837  641.6929]
+  img_size: [64, 64]
+  in_chans: 3
+change_threshold: 0.
+base_img: 'mean'
+encoder: 
+  patch_size: 8
+  embed_dim: 256
+  depth: 4
+  num_heads: 8
+  mlp_ratio: 4
+  qkv_bias: True
+decoder:
+  d_model: 256
+  nhead: 8
+  dim_feedforward: 1024
+  dropout: 0.1
+  activation: "relu"
+  normalize_before: False
+  use_self_attn: False
+  num_layers: 4
+  return_intermediate: False
+upsampling_layer:
+  num_layers: 3
+log:
+  checkpoint_dir: 'checkpoints/ravaen'
+  log_img_epoch_freq: 10
+  wandb_proj: 'ravaen'
+# training hyper-parameters
+seed: 42
+batch_size: 64
+val_batch_size: 64
+lr: 1e-4
+weight_decay: 1e-6
+warmup_epochs: 10
+num_epochs: 200
+timesteps: 5
