@@ -1,0 +1,53 @@
+datasets:
+  train_path: 'data/processed/EuroSAT_hdf5/train.hdf5'
+  val_path: 'data/processed/EuroSAT_hdf5/val.hdf5'
+  # Add the path of test dataset for evaluation
+  test_path: 'data/processed/EuroSAT_hdf5/test.hdf5'
+  irrelevant_changes:
+    brightness: 0.2
+    contrast: 0.2
+    saturation: 0.2
+    hue: 0.1
+    seasonal_change_prob: 0.8
+    cloud_cover_prob: 0.2
+  relevant_changes:
+    prob: 0.5
+    type: inter-class
+    apply_gaussian: True
+  norm:
+    mean: [87.74031887  96.91348307 103.93319293]
+    std: [51.94015577 34.79027144 29.23951781]
+  img_size: [64, 64]
+  in_chans: 3
+encoder: 
+  patch_size: 8
+  embed_dim: 256
+  depth: 4
+  num_heads: 8
+  mlp_ratio: 4
+  qkv_bias: True
+decoder:
+  d_model: 256
+  nhead: 8
+  dim_feedforward: 1024
+  dropout: 0.1
+  activation: "relu"
+  normalize_before: False
+  use_self_attn: False
+  num_layers: 4
+  return_intermediate: False
+upsampling_layer:
+  num_layers: 3
+log:
+  checkpoint_dir: 'checkpoints/synthetic'
+  log_img_epoch_freq: 10
+  wandb_proj: 'synthetic'
+# training hyper-parameters
+seed: 42
+batch_size: 64
+val_batch_size: 64
+lr: 1e-4
+weight_decay: 1e-6
+warmup_epochs: 10
+num_epochs: 200
+timesteps: 5
