@@ -1,5 +1,18 @@
 # SITS-ExtremeEvents
-Code and models for extreme event detection using satellite image time series (SITS).
+Official Implementation (code and models) of our WACVw paper: "Leveraging Satellite Image Time Series for Accurate Extreme Event Detection"
+
+## Abstract
+Climate change is leading to an increase in extreme weather events causing significant environmental damage and loss of life. Early detection of such events is essential for improving disaster response. In this work we propose SITS-Extreme a novel framework that leverages satellite image time series to detect extreme events by incorporating multiple pre-disaster observations. This approach effectively filters out irrelevant changes while isolating disaster-relevant signals enabling more accurate detection. Extensive experiments on both real-world and synthetic datasets validate the effectiveness of SITS-Extreme demonstrating substantial improvements over widely used strong bi-temporal baselines. Additionally we examine the impact of incorporating more timesteps analyze the contribution of key components in our framework and evaluate its performance across different disaster types offering valuable insights into its scalability and applicability for large-scale disaster monitoring.
+
+## TODOs
+- [ ] add environment setup
+- [ ] add Google Drive links for downloading the processed data
+- [ ] add example commands for training and testing
+- [ ] add model checkpoints for reproducing the results
+- [ ] add reference bibtex
+- [ ] Test the code from scratch and fix any bugs
+
+## 0. Environment Setup
 
 ## 1. Data Preparation
 
@@ -57,7 +70,22 @@ To ensure reproducility of the experiments and results as presented in the paper
 
 ## 2. Experiments
 ### 2.1. Training the models
-
+```bash
+python main.py --config ${CONFIG_FILE} --subconfig ${SUBCONFIG_FILE} --seed ${SEED}
+```
 ### 2.2. Evaluating the models
+```bash
+python test.py --default_config ${CONFIG_FILE} --subconfig ${SUBCONFIG_FILE} --checkpoint_folder ${CHECKPOINT_FOLDER}
+```
 
 ### 2.3 Model Checkpoints to reproduce the results (optional)
+
+## Reference
+If you want to cite our work, you can do so with the following BibTex:
+
+## Contact
+If you have any questions or need further assistance, please feel free to reach out to us: hfang@kth.se.
+
+## Acknowledgements
+1. We would like to thank the authors of the RaVAEn paper for providing the RaVAEn dataset and the authors of the EuroSAT dataset for making it publicly available.
+2. This work is funded by Digital Futures in the project EO-AI4GlobalChange. All experiments were performed using the supercomputing resource Berzelius provided by the National Supercomputer Centre at Linkoping University and the Knut and Alice Wallenberg Foundation. Heng Fang thanks Erik Englesson, Adam Stewart, Dino Ienco, Zhuo Zheng, Sebastian Gerard, Ling Li, and Sebastian Hafner for their feedback on improving the presentation of this paper.
