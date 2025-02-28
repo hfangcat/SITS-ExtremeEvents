@@ -1,0 +1,4 @@
+baseline: bi_siamdiff
+losses:
+  types: ['bce']
+exp_name: 'bi_siamdiff'

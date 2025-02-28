@@ -1,0 +1,4 @@
+baseline: multi_siamconcat
+losses:
+  types: ['bce']
+exp_name: 'multi_siamconcat'
