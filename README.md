@@ -4,13 +4,22 @@ Official Implementation (code and models) of our WACVw paper: "Leveraging Satell
 ## Abstract
 Climate change is leading to an increase in extreme weather events causing significant environmental damage and loss of life. Early detection of such events is essential for improving disaster response. In this work we propose SITS-Extreme a novel framework that leverages satellite image time series to detect extreme events by incorporating multiple pre-disaster observations. This approach effectively filters out irrelevant changes while isolating disaster-relevant signals enabling more accurate detection. Extensive experiments on both real-world and synthetic datasets validate the effectiveness of SITS-Extreme demonstrating substantial improvements over widely used strong bi-temporal baselines. Additionally we examine the impact of incorporating more timesteps analyze the contribution of key components in our framework and evaluate its performance across different disaster types offering valuable insights into its scalability and applicability for large-scale disaster monitoring.
 
+## Features
+- [x] Implements the SITS-Extreme framework for extreme event detection using satellite image time series.
+- [x] Supports training and evaluation from scratch.
+- [x] Includes processed dataset and pre-trained model checkpoints.
+- [x] Easy-to-use command-line interface and modular structure for flexibility and extensibility.
+
 ## TODOs
 - [ ] add environment setup
-- [ ] add Google Drive links for downloading the processed data
+- [x] add Google Drive links for downloading the processed data
 - [ ] add example commands for training and testing
 - [ ] add model checkpoints for reproducing the results
-- [ ] add reference bibtex
+- [x] add reference bibtex
 - [ ] Test the code from scratch and fix any bugs
+- [x] add license file
+- [ ] add README improvements (e.g., one or two sentences for project summary, arxiv/thecvf link, overview figure, etc.)
+- [ ] add sample output or result logs (optional)
 
 ## 0. Environment Setup
 
@@ -27,8 +36,8 @@ For full transparency, we also provide the scripts to prepare the data from scra
 ### 1.1. Downloading the data
 To run the experiments and reproduce the results, you need to download the processed data from the following links and place them in the `data/processed/` directory:
 <!-- TODO: Add Google Drive links before publication -->
-- EuroSAT (hdf5 format, including train/validation/test splits): [Google Drive]()
-- RaVAEn (hdf5 format, including train/validation/test splits): [Google Drive]()
+- EuroSAT (hdf5 format, including train/validation/test splits): [Google Drive](https://drive.google.com/drive/folders/1f15oaI0-6Qqw-R25pXq-nTLN9ITS0VQp?usp=drive_link)
+- RaVAEn (hdf5 format, including train/validation/test splits): [Google Drive](https://drive.google.com/drive/folders/1b5020p-2uq7RB-SNqIudJcqTii49KYKa?usp=drive_link)
 
 ### 1.2. Preparing the data from scratch (optional)
 If you want to prepare the data from scratch, you can follow the instructions here:
@@ -82,6 +91,15 @@ python test.py --default_config ${CONFIG_FILE} --subconfig ${SUBCONFIG_FILE} --c
 
 ## Reference
 If you want to cite our work, you can do so with the following BibTex:
+```bibtex
+@inproceedings{fang2025leveraging,
+  title={Leveraging Satellite Image Time Series for Accurate Extreme Event Detection},
+  author={Fang, Heng and Azizpour, Hossein},
+  booktitle={Proceedings of the Winter Conference on Applications of Computer Vision},
+  pages={526--535},
+  year={2025}
+}
+```
 
 ## Contact
 If you have any questions or need further assistance, please feel free to reach out to us: hfang@kth.se.
