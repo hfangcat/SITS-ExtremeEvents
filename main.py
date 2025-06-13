@@ -22,24 +22,15 @@ from datasets.ravaen_hdf5_dataset import RaVAEnHDF5Dataset
 
 # 1. ae_variants
 from models.ae_variants import build_model as build_ae
-# for ablation study
-from models.ae_variants_abl_4T import build_model as build_ae_4T
-from models.ae_variants_abl_3T import build_model as build_ae_3T
 
 # 2. vae_variants
 from models.vae_variants import build_model as build_vae
-# for ablation study
-from models.vae_variants_abl_4T import build_model as build_vae_4T
-from models.vae_variants_abl_3T import build_model as build_vae_3T
-from models.vae_variants_abl_2T import build_model as build_vae_2T
 
 # 3. siamese_variants (bi-temporal strategy)
-from models.bi_earlyfusion import build_model as build_bi_earlyfusion
 from models.bi_siamconcat import build_model as build_bi_siamconcat
 from models.bi_siamdiff import build_model as build_bi_siamdiff
 
 # 4. siamese_variants (multi-temporal strategy)
-from models.multi_earlyfusion import build_model as build_multi_earlyfusion
 from models.multi_siamconcat import build_model as build_multi_siamconcat
 from models.multi_siamdiff import build_model as build_multi_siamdiff
 
@@ -127,30 +118,19 @@ def main(config):
     if config['baseline'] == 'vanilla_ae':
         if config['timesteps'] == 5:
             model, criterion = build_ae(config)
-        elif config['timesteps'] == 4:
-            model, criterion = build_ae_4T(config)
-        elif config['timesteps'] == 3:
-            model, criterion = build_ae_3T(config)
+
     # 2.2 Load the vae_variants model
     elif config['baseline'] == 'vanilla_vae':
         if config['timesteps'] == 5:
             model, criterion = build_vae(config)
-        elif config['timesteps'] == 4:
-            model, criterion = build_vae_4T(config)
-        elif config['timesteps'] == 3:
-            model, criterion = build_vae_3T(config)
-        elif config['timesteps'] == 2:
-            model, criterion = build_vae_2T(config)
+
     # 2.3 Load the siamese_variants model (bi-temporal strategy)
-    elif config['baseline'] == 'bi_earlyfusion':
-        model, criterion = build_bi_earlyfusion(config)
     elif config['baseline'] == 'bi_siamconcat':
         model, criterion = build_bi_siamconcat(config)
     elif config['baseline'] == 'bi_siamdiff':
         model, criterion = build_bi_siamdiff(config)
+        
     # 2.4 Load the siamese_variants model (multi-temporal strategy)
-    elif config['baseline'] == 'multi_earlyfusion':
-        model, criterion = build_multi_earlyfusion(config)
     elif config['baseline'] == 'multi_siamconcat':
         model, criterion = build_multi_siamconcat(config)
     elif config['baseline'] == 'multi_siamdiff':
