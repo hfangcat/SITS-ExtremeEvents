@@ -129,7 +129,7 @@ We provide the model checkpoints (SITS-Extreme-VAE) on the RaVAEn dataset to rep
 - [x] add example commands for training and testing
 - [x] add model checkpoints for reproducing the results
 - [x] add reference bibtex
-- [ ] Test the code from scratch and fix any bugs
+- [x] Test the code from scratch and fix bugs
 - [x] add license file
 - [x] add README improvements (e.g., one or two sentences for project summary, arxiv/thecvf link, overview figure, etc.)
 - [ ] add sample output or result logs (optional)
