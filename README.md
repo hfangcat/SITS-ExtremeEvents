@@ -100,9 +100,20 @@ To ensure reproducility of the experiments and results as presented in the paper
 ```bash
 python main.py --config ${CONFIG_FILE} --subconfig ${SUBCONFIG_FILE} --seed ${SEED}
 ```
-### 2.2. Evaluating the models
+
+For example, to train our model (VAE variant) on the RaVAEn dataset with the default configuration and a specific seed, you can run:
 ```bash
-python test.py --default_config ${CONFIG_FILE} --subconfig ${SUBCONFIG_FILE} --checkpoint_folder ${CHECKPOINT_FOLDER}
+python main.py --config "configs/ravaen/default.yaml" --subconfig "configs/ravaen/vae.yaml" --seed 42
+```
+
+### 2.2. Evaluating the models (calculating metrics for all seeds and aggregating results)
+```bash
+python make_table.py --default_config ${CONFIG_FILE} --subconfig ${SUBCONFIG_FILE} --checkpoint_folder ${CHECKPOINT_FOLDER} --dataset ${DATASET}
+```
+
+For example, to evaluate our model (VAE variant) on the RaVAEn dataset with the default configuration and a specific checkpoint folder, you can run:
+```bash
+python make_table.py --default_config "configs/ravaen/default.yaml" --subconfig $"configs/ravaen/vae.yaml" --checkpoint_folder "checkpoints/ravaen" --dataset "ravaen"
 ```
 
 ### 2.3 Model Checkpoints to reproduce the results (optional)
