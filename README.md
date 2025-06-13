@@ -1,12 +1,12 @@
-# SITS-ExtremeEvents
+# 🛰️ SITS-ExtremeEvents
 Official Implementation (code and models) of our WACVw paper: "Leveraging Satellite Image Time Series for Accurate Extreme Event Detection".
 
 [![Paper](https://img.shields.io/badge/Paper-WACVw%202025-blue)](https://openaccess.thecvf.com/content/WACV2025W/GeoCV/html/Fang_Leveraging_Satellite_Image_Time_Series_for_Accurate_Extreme_Event_Detection_WACVW_2025_paper.html)
 [![Google Drive](https://img.shields.io/badge/Data-Google%20Drive-orange)](https://drive.google.com/drive/folders/13xS_ewTuenqaj7yCZ9g4_2RNCcQNDCMU?usp=drive_link)
 
-## Overview
+## 🌐 Overview
 
-SITS-Extreme is a scalable framework for detecting extreme events (e.g., floods, fires, landslides, hurricanes) by leveraging multi-temporal satellite imagery. Unlike traditional bi-temporal approaches, our method integrates multiple pre-disaster images to isolate disaster-relevant changes and filter out irrelevant variations (e.g., weather, seasonality).
+SITS-Extreme is a scalable framework for detecting extreme events (e.g., 🌊 floods, 🔥 fires, ⛰️ landslides, 🌪️ hurricanes) by leveraging multi-temporal satellite imagery. Unlike traditional bi-temporal approaches, our method integrates multiple pre-disaster images to isolate disaster-relevant changes and filter out irrelevant variations (e.g., weather, seasonality).
 
 <p align="center">
   <img src="figures/teaser.png" width="700"/><br>
@@ -43,7 +43,7 @@ pip install -r requirements.txt
 ⚠️ Notes:
 - The PyTorch versions in requirements.txt are CUDA-specific (+cu116). If you're using a different CUDA version or a CPU-only setup, install PyTorch manually before installing other dependencies: Visit https://pytorch.org/get-started/locally/ to get the right install command.
 
-## 1. Data Preparation
+## 1. Data Preparation 🗂️
 
 **Important Note on Data Preparation and Reproducility:**
 
@@ -97,7 +97,7 @@ If you want to prepare the data from scratch, you can follow the instructions he
 
 To ensure reproducility of the experiments and results as presented in the paper, we have provided the exact train/validation/test splits in the processed data files that you can download from the links in Section 1.1. -->
 
-## 2. Experiments
+## 2. Experiments 🔬
 ### 2.1. Training the models
 ```bash
 python main.py --config ${CONFIG_FILE} --subconfig ${SUBCONFIG_FILE} --seed ${SEED}
@@ -123,7 +123,7 @@ We provide the model checkpoints (SITS-Extreme-VAE) on the RaVAEn dataset to rep
 - RaVAEn (SITS-Extreme-VAE): [Google Drive](https://drive.google.com/drive/folders/1om-kO4G-CBONe4-er_j1hX1xEK8CQiF5?usp=drive_link) 
 
 
-## TODOs
+## 📋 TODOs
 - [x] add environment setup
 - [x] add Google Drive links for downloading the processed data
 - [x] add example commands for training and testing
@@ -135,7 +135,7 @@ We provide the model checkpoints (SITS-Extreme-VAE) on the RaVAEn dataset to rep
 - [ ] add sample output or result logs (optional)
 
 
-## Reference
+## 📖 Citation
 If you want to cite our work, you can do so with the following BibTex:
 ```bibtex
 @inproceedings{fang2025leveraging,
@@ -147,9 +147,9 @@ If you want to cite our work, you can do so with the following BibTex:
 }
 ```
 
-## Contact
+## 📡 Contact
 If you have any questions or need further assistance, please feel free to reach out to us: hfang@kth.se.
 
-## Acknowledgements
+## 🙌 Acknowledgements
 1. We would like to thank the authors of the RaVAEn paper for providing the RaVAEn dataset and the authors of the EuroSAT dataset for making it publicly available.
 2. This work is funded by Digital Futures in the project EO-AI4GlobalChange. All experiments were performed using the supercomputing resource Berzelius provided by the National Supercomputer Centre at Linkoping University and the Knut and Alice Wallenberg Foundation. Heng Fang thanks Erik Englesson, Adam Stewart, Dino Ienco, Zhuo Zheng, Sebastian Gerard, Ling Li, and Sebastian Hafner for their feedback on improving the presentation of this paper.
