@@ -1,25 +1,16 @@
 # SITS-ExtremeEvents
-Official Implementation (code and models) of our WACVw paper: "Leveraging Satellite Image Time Series for Accurate Extreme Event Detection"
+Official Implementation (code and models) of our WACVw paper: "Leveraging Satellite Image Time Series for Accurate Extreme Event Detection".
 
-## Abstract
-Climate change is leading to an increase in extreme weather events causing significant environmental damage and loss of life. Early detection of such events is essential for improving disaster response. In this work we propose SITS-Extreme a novel framework that leverages satellite image time series to detect extreme events by incorporating multiple pre-disaster observations. This approach effectively filters out irrelevant changes while isolating disaster-relevant signals enabling more accurate detection. Extensive experiments on both real-world and synthetic datasets validate the effectiveness of SITS-Extreme demonstrating substantial improvements over widely used strong bi-temporal baselines. Additionally we examine the impact of incorporating more timesteps analyze the contribution of key components in our framework and evaluate its performance across different disaster types offering valuable insights into its scalability and applicability for large-scale disaster monitoring.
+[![Paper](https://img.shields.io/badge/Paper-WACVw%202025-blue)](https://openaccess.thecvf.com/content/WACV2025W/GeoCV/html/Fang_Leveraging_Satellite_Image_Time_Series_for_Accurate_Extreme_Event_Detection_WACVW_2025_paper.html)
+[![Google Drive](https://img.shields.io/badge/Data-Google%20Drive-orange)](https://drive.google.com/drive/folders/13xS_ewTuenqaj7yCZ9g4_2RNCcQNDCMU?usp=drive_link)
 
-## Features
-- [x] Implements the SITS-Extreme framework for extreme event detection using satellite image time series.
-- [x] Supports training and evaluation from scratch.
-- [x] Includes processed dataset and pre-trained model checkpoints.
-- [x] Easy-to-use command-line interface and modular structure for flexibility and extensibility.
+## Overview
 
-## TODOs
-- [x] add environment setup
-- [x] add Google Drive links for downloading the processed data
-- [x] add example commands for training and testing
-- [x] add model checkpoints for reproducing the results
-- [x] add reference bibtex
-- [ ] Test the code from scratch and fix any bugs
-- [x] add license file
-- [ ] add README improvements (e.g., one or two sentences for project summary, arxiv/thecvf link, overview figure, etc.)
-- [ ] add sample output or result logs (optional)
+SITS-Extreme is a scalable framework for detecting extreme events (e.g., floods, fires, landslides, hurricanes) by leveraging multi-temporal satellite imagery. Unlike traditional bi-temporal approaches, our method integrates multiple pre-disaster images to isolate disaster-relevant changes and filter out irrelevant variations (e.g., weather, seasonality).
+
+![teaser](figures/teaser.pdf)
+![pipeline](figures/pipeline.pdf)
+
 
 ## 0. Environment Setup 🔧
 
@@ -119,6 +110,18 @@ python make_table.py --default_config "configs/ravaen/default.yaml" --subconfig 
 ### 2.3 Model Checkpoints to reproduce the results (optional)
 We provide the model checkpoints (SITS-Extreme-VAE) on the RaVAEn dataset to reproduce the results in the paper. You can create a folder named `checkpoints/ravaen`, download the model checkpoints from the following link and place them in the `checkpoints/ravaen` directory:
 - RaVAEn (SITS-Extreme-VAE): [Google Drive](https://drive.google.com/drive/folders/1om-kO4G-CBONe4-er_j1hX1xEK8CQiF5?usp=drive_link) 
+
+
+## TODOs
+- [x] add environment setup
+- [x] add Google Drive links for downloading the processed data
+- [x] add example commands for training and testing
+- [x] add model checkpoints for reproducing the results
+- [x] add reference bibtex
+- [ ] Test the code from scratch and fix any bugs
+- [x] add license file
+- [x] add README improvements (e.g., one or two sentences for project summary, arxiv/thecvf link, overview figure, etc.)
+- [ ] add sample output or result logs (optional)
 
 
 ## Reference
