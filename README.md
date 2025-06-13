@@ -8,8 +8,9 @@ Official Implementation (code and models) of our WACVw paper: "Leveraging Satell
 
 SITS-Extreme is a scalable framework for detecting extreme events (e.g., floods, fires, landslides, hurricanes) by leveraging multi-temporal satellite imagery. Unlike traditional bi-temporal approaches, our method integrates multiple pre-disaster images to isolate disaster-relevant changes and filter out irrelevant variations (e.g., weather, seasonality).
 
-![teaser](figures/teaser.pdf)
-![pipeline](figures/pipeline.pdf)
+![Teaser](figures/teaser.png)
+![Pipeline](figures/pipeline.png)
+
 
 
 ## 0. Environment Setup 🔧
