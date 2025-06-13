@@ -11,7 +11,7 @@ Climate change is leading to an increase in extreme weather events causing signi
 - [x] Easy-to-use command-line interface and modular structure for flexibility and extensibility.
 
 ## TODOs
-- [ ] add environment setup
+- [x] add environment setup
 - [x] add Google Drive links for downloading the processed data
 - [ ] add example commands for training and testing
 - [ ] add model checkpoints for reproducing the results
@@ -21,7 +21,25 @@ Climate change is leading to an increase in extreme weather events causing signi
 - [ ] add README improvements (e.g., one or two sentences for project summary, arxiv/thecvf link, overview figure, etc.)
 - [ ] add sample output or result logs (optional)
 
-## 0. Environment Setup
+## 0. Environment Setup 🔧
+
+We recommend using **conda** to manage the environment and **pip** to install the required packages.
+
+This project uses **Python 3.8** and was tested with **PyTorch 1.12.1 + CUDA 11.6**.
+
+Create a new conda environment:
+```bash
+conda create -n sits-extreme python=3.8 -y
+conda activate sits-extreme
+```
+
+Install the required packages via pip:
+```bash
+pip install -r requirements.txt
+```
+
+⚠️ Notes:
+- The PyTorch versions in requirements.txt are CUDA-specific (+cu116). If you're using a different CUDA version or a CPU-only setup, install PyTorch manually before installing other dependencies: Visit https://pytorch.org/get-started/locally/ to get the right install command.
 
 ## 1. Data Preparation
 

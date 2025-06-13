@@ -1,0 +1,21 @@
+# Tested with Python 3.8
+
+torch==1.12.1+cu116
+torchvision==0.13.1+cu116
+torchaudio==0.12.1+cu116
+transformers==4.21.1
+accelerate
+einops
+rasterio
+shapely
+scikit-learn
+matplotlib
+pandas
+numpy
+tqdm
+h5py
+pillow
+scipy
+opencv-python
+typing-extensions
+wandb
