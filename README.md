@@ -13,8 +13,8 @@ Climate change is leading to an increase in extreme weather events causing signi
 ## TODOs
 - [x] add environment setup
 - [x] add Google Drive links for downloading the processed data
-- [ ] add example commands for training and testing
-- [ ] add model checkpoints for reproducing the results
+- [x] add example commands for training and testing
+- [x] add model checkpoints for reproducing the results
 - [x] add reference bibtex
 - [ ] Test the code from scratch and fix any bugs
 - [x] add license file
@@ -101,7 +101,7 @@ To ensure reproducility of the experiments and results as presented in the paper
 python main.py --config ${CONFIG_FILE} --subconfig ${SUBCONFIG_FILE} --seed ${SEED}
 ```
 
-For example, to train our model (VAE variant) on the RaVAEn dataset with the default configuration and a specific seed, you can run:
+For example, to train our model (SITS-Extreme-VAE) on the RaVAEn dataset with the default configuration and a specific seed, you can run:
 ```bash
 python main.py --config "configs/ravaen/default.yaml" --subconfig "configs/ravaen/vae.yaml" --seed 42
 ```
@@ -111,12 +111,15 @@ python main.py --config "configs/ravaen/default.yaml" --subconfig "configs/ravae
 python make_table.py --default_config ${CONFIG_FILE} --subconfig ${SUBCONFIG_FILE} --checkpoint_folder ${CHECKPOINT_FOLDER} --dataset ${DATASET}
 ```
 
-For example, to evaluate our model (VAE variant) on the RaVAEn dataset with the default configuration and a specific checkpoint folder, you can run:
+For example, to evaluate our model (SITS-Extreme-VAE) on the RaVAEn dataset with the default configuration and a specific checkpoint folder, you can run:
 ```bash
 python make_table.py --default_config "configs/ravaen/default.yaml" --subconfig $"configs/ravaen/vae.yaml" --checkpoint_folder "checkpoints/ravaen" --dataset "ravaen"
 ```
 
 ### 2.3 Model Checkpoints to reproduce the results (optional)
+We provide the model checkpoints (SITS-Extreme-VAE) on the RaVAEn dataset to reproduce the results in the paper. You can create a folder named `checkpoints/ravaen`, download the model checkpoints from the following link and place them in the `checkpoints/ravaen` directory:
+- RaVAEn (SITS-Extreme-VAE): [Google Drive](https://drive.google.com/drive/folders/1om-kO4G-CBONe4-er_j1hX1xEK8CQiF5?usp=drive_link) 
+
 
 ## Reference
 If you want to cite our work, you can do so with the following BibTex:
