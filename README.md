@@ -3,6 +3,7 @@ Official Implementation (code and models) of our WACVw paper: "Leveraging Satell
 
 [![Paper](https://img.shields.io/badge/Paper-WACVw%202025-blue)](https://openaccess.thecvf.com/content/WACV2025W/GeoCV/html/Fang_Leveraging_Satellite_Image_Time_Series_for_Accurate_Extreme_Event_Detection_WACVW_2025_paper.html)
 [![Google Drive](https://img.shields.io/badge/Data-Google%20Drive-orange)](https://drive.google.com/drive/folders/13xS_ewTuenqaj7yCZ9g4_2RNCcQNDCMU?usp=drive_link)
+[![Poster](https://img.shields.io/badge/Poster-Link-green)](https://drive.google.com/file/d/1yErRwKQxoyNTTaEdEXGQ8Ho-8LoY0vSb/view?usp=drive_link)
 
 ## 🌐 Overview
 
